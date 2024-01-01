@@ -1,0 +1,35 @@
+JQuery - 인프런 무료 강좌
+Keras 창시자에게 배우는 딥러닝
+HTML+CSS+JavaScript 웹표준의 정석
+Nod.js 프로그래밍
+파이썬 스킬업 - 교보 e
+
+
+1. GIMP 성남 e-book 111p
+2. OpenCV 152p
+3. Pandas 58p
+4. 자바웹프로그램 - 162p(성남)
+5. node.js 100p
+6. HTML CSS 390p
+7. 다빈치리졸브 짹PD 유투브 6회
+8. Make:Electronics 222p
+
+10. 실무에 바로 써먹는 경리회계 업무지식 - 48p
+11. 딥러닝 15%
+12. Java프로그래밍 431p
+* 정보처리기사
+* 프랑스어
+* 독일어
+13. MS Access
+14. MS PowerBI
+15. Delphi 9.3
+16. php mysql(성남) 125p
+17. PyQt 재즐보프 #10
+18. Inkscape-YOUTUBE
+9. Blender YOUTUBE
+
+[Memo]
+ZWCAD
+3WN8 WFT9 AMMR 63ZP BHYU M52R
+
+192.168.0.12 mysql root pw: 0046
