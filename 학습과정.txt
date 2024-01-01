@@ -1,6 +1,6 @@
 JQuery - 인프런 무료 강좌
 Keras 창시자에게 배우는 딥러닝 117p
-HTML+CSS+JavaScript 웹표준의 정석
+HTML+CSS+JavaScript 웹표준의 정석 148p
 Nod.js 프로그래밍
 파이썬 스킬업 - 교보 e
 판다스입문 54p
