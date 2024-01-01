@@ -1,0 +1,77 @@
+[git 정리]
+
+1. Public 신규 git 생성/연결
+2. Public 기존 git 연결
+3. Private 신규 git 생성/연결
+4. Private 기존 git 연결
+
+* 주의
+1) 현재 pc에서 내 계정 확인 - 제어판/자격증명관리/Windows자격증명
+2) 현재 접속된 내 계정 확인 : git config user.name, 변경시 git config --global user.name choijeho
+2) vim에서 exit은 :qa!
+3) git clone 하면 현재 init된 디렉토리의 하위 디렉토리에 원격과 같은 폴더 자동 생성되고 저장됨.
+   clone외는 모두 1:1 폴더 매칭됨.
+
+1. Public 신규 git 생성/연결 (pc1->최초, pc2->원격클론)
+ 1) git 홈 페이지 로그인, repository 생성(public, readme없음)
+ 2) pc1 git bash 또는 cmd 기동->git 폴더 이동
+ 3) git init->새로운 파일 만듬->git status ->git add . -> git commit -m 'first' 
+ 4) git remote add origin https://github.com/choijeho/test
+ 5) git remote-v
+ 6) git push -u origin master [origin은 내 pc 폴더, master는 깃 서버]
+ * pull로 가져오는 방법-신규도 가능. 폴더 지정 가능
+ 7) pc2에서 폴더 만듬
+ 8) git init->git remote -v (아직 미연결이면)->git remote add origin https://github.com/choijeho/test1
+ 9) git pull origin master (origin master 순서 바뀌면 안됨.) -> 깃 서버 내용이 pc2로 다운로드 완료
+ * clone으로 가져오는 방법-신규만 가능. 하위 폴더 자동 생성됨.
+ 7) pc2에서 폴더 만듬, 클론하면 하위 폴더가 만들어 지는 것을 감안할 것.
+ 8) git clone -> 하위 폴더에 복사 완료.
+
+2. Public 기존 git 연결
+ * 상황: 깃서버 내용이 먼저 변경될 수도, pc1 또는 pc2에서 먼저 변경될 수도 있다.
+ * 깃서버에서 새로 고침한다. pc1 또는 pc2에서 git status 명령으로 변경 여부 확인 먼저함.
+ 1) pc1에서 git remote -v로 연결 상태 확인 (한번 연결된 후에는 주소가 .git에 저장되어 있다.)
+ 2) pc1에서 git pull (먼저 서버에 있는 내용을 가져 오겠다.)
+ 3) pc1에서 파일 변경->git add . -> git commit -m '2nd' -> 깃 서버에서 변경 여부 확인
+ 4) 깃 서버에서 파일 변경->pc1에서 git pull
+ 5) pc2에서 -> 해당 폴더->git remote -v확인->git pull origin master(origin master를 항상 사용해야함)
+
+
+[참고]
+Git Bash : 윈도우 메뉴에서 아이콘 클릭, 윈도우에서 리눅스명령어 가능.
+git config --global core.editor "notepad.exe" : 문서작성기를 vim -> 메모장으로 변경
+git init hello-git : 상위 디렉토리에서 hello-git 디렉토리를 init 할 수 있다.
+git add 파일명 : 스테이지로 이동
+git add . : 모든 파일을 스테이지로 이동
+git commit -m . : 모든 파일을 저장소로 이동
+git commit -m 'my message' : 저장소로 이동
+git commit -am 'my message2' : add와 commit을 한번에 -> 이거는 안됨.
+git log : 과거/현재의 브랜치 상태
+git status : 현재 브랜치에서 add/commit 해야 할 상황 표시
+git diff  : 달라진 내용만 화면 출력
+.gitignore : 이것은 명령어가 아니고 파일명임. git관리가 필요없는 파일들의 리스트
+git commit --amend : 방금 입력한 커밋 메시지를 다시 수정함
+git checkout -- hello.txt : 방금 수정한 파일을 add 하기 전에 없었던 것으로 되돌림.
+git reset HEAD hello.txt : 방금 add한 파일을 원래데로 되돌림.
+git reset HEAD^ : 수정->add->commit까지 한 파일을 원래데로 되돌림.
+git reset --hard 해시 : 해시가 가장 업데이트(최근)된 것으로 함. 그 이후는 무효.
+git revert : 수정한 내용은 남겨두고 커밋만 되돌릴 때
+
+git remote add origin https://github.com/choijeho/test.git : 리파지토리와 접속
+git remote -v : 원격접속 상태
+git push -u origin master : -u 접속 직후 처음. 로컬->원격 master로 푸시. 로그인창이 이때 나타남.
+git push : 로컬에서 수정->add/commit 후 -> push하면 원격 리파지토리에 저장됨.
+git pull origin master : 로컬(origin)으로 원격 master를 가지고 옴.
+rm -r .git : git init을 취소. 즉 ls -al 하면 (master) 표시가 사라짐.
+git rm -rf (폴더명 또는 파일명) : 로컬 및 원격 모두 삭제함. 다음 commit 해야 삭제 완료.
+git commit -m 'I deleted'
+git rm --cached -r (폴더명 또는 파일명) : 원격의 폴더/파일만 삭제, 로컬은 삭제안함.
+git clone 원격저장소주소 : 한꺼번에 git에서 로컬로 받아옴. 실제 파일이 다운로드됨.
+
+origin = 원격저장소
+main = master에서 바뀜 - 인종차별 등 이슈?
+
+HEAD = 현재 위치
+git에서 먼저 무에서 시작할 수는 없다 즉,
+가능: local 파일 생성->git 리파지토리 생성->git으로 전송
+불가: git리파지토리 생성->해당 리파지토리에서 새 파일 작성 안됨.
