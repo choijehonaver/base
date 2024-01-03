@@ -1,0 +1,5 @@
+[Python의 각종 지식]
+1. encode/decode : 빌트인 함수 참조, Binary Sequence Type 으로 검색
+ b'\xf0\xf1\xf2'.hex() -> 'f0f1f2'
+ b'\xf0\xf1\xf2'.hex(':') -> 'f0:f1:f2'
+  b'\xf0\xf1\xf2'.removeprfix(b'\') -> b'f0:f1:f2' # b'는 그대로 남음 
