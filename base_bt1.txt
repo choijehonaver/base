@@ -63,3 +63,73 @@ except OSError as e:
     pass
 
 client.close()
+
+[RPi-RPi raspbian 11 bulls eye]
+참조: https://people.csail.mit.edu/albert/bluez-intro/x232.html -> 먼저 pybluez install 부터 할 것.
+1. 블루투스 라이브러리 설치
+ sudo apt-get install bluez libbluetooth-dev pi-bluetooth
+ pip3 install pybluez (또는 sudo apt-get install pybluez)
+ 위 2 명령을 차례대로 입력/엔터. 단, 2번째만 입력해도 되는 경우가 있었음.
+2. 서버 RPi 에서, 블루투스 주소 확인
+ bluetoothctl
+ [bluetooth]# discoverable on
+ 참고 bluetoothctl 종료는 quit
+ server.py 실행함.
+3. 클라이언트 RPi에서, 
+ bluetoothctl-필요없음
+ [bluetooth]# discoverable on-필요없음
+ client.py 실행함.
+4. 서버 RPi에서 b'hello' 수신됨 확인
+ 특기사항> 모든 과정에서 블루투스 연결 확인 또는 키를 묻는 팝업 화면 안 나오는 것이 정상.->raspbian에서 개선된 것으로 추정.
+           다만, rpi에서는 서버쪽에서는 팝업화면 없고, 클라이언트에서는 연결성공 이라는 팝업 화면 나옴.
+5. 자료
+
+#server.py
+
+import bluetooth
+
+server_sock=bluetooth.BluetoothSocket( bluetooth.RFCOMM )
+
+port = 1
+server_sock.bind(("",port))
+server_sock.listen(1)
+
+client_sock,address = server_sock.accept()
+print "Accepted connection from ",address
+
+data = client_sock.recv(1024)
+print "received [%s]" % data
+
+client_sock.close()
+server_sock.close()
+
+# client.py
+
+import bluetooth
+
+bd_addr = "01:23:45:67:89:AB"
+
+port = 1
+
+sock=bluetooth.BluetoothSocket( bluetooth.RFCOMM )
+sock.connect((bd_addr, port))
+
+sock.send("hello!!")
+
+sock.close()
+
+[RPi-PC raspbian 11 bulls eye, Window 10]
+참고 : 위의 2개 프로그램에서 host, port no 만 변경하고, 서버에서는 채팅 대신 1회 수신해서 화면 출력하는 것으로 코드 수정함.
+      서버가 PC, 클라이언트는 RPi
+1. rpi에 블루투스 라이브러리 설치 과정 없음. 서버 블루투스 주소 확인한 상태
+2. bluetoothctl 과정 없음. 단, RPi가 서버일 경우는 필요함.
+3. PC에서 server_rpi.py 실행함.
+3. 클라이언트 RPi에서 client.py 실행함. (서버 address, port no 4 만 변경했음)
+4. 서버 PC 에서 'hello' 수신됨 확인
+ 특기사항> 모든 과정에서 PC나 RPi 모두 다, 블루투스 연결 확인 또는 키를 묻는 팝업 화면 안 나오는 것이 정상.->raspbian에서 개선된 것으로 추정.
+           다만, 클라이언트 rpi 에서는 연결성공 이라는 팝업 화면 나옴.
+5. 자료
+# server_rpi.py
+ server.py와 동일하고, 15행 message = input...과 16행 client.send(mess... 만 삭제했음
+# client.py
+ 상기 client.py와 동일하고, address, port 4만 수정했음.
