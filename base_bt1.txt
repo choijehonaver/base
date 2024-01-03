@@ -1,0 +1,62 @@
+목표: PC-RPi-Android 상호 BT 통신 
+
+[PC-PC window 10]
+참조 : https://www.youtube.com/watch?v=8pMaR-WUc6U&t=533s 
+1. 준비: 데스크탑 PC(서버) , 노트북(클라이언트)
+2. 데스크탑에서
+ 1) 블루투스 어댑터 검색, MAC 주소 확인
+ 2) server.py 작성
+3. 노트북에서
+ 1) 안해도 되는 사항 : 블루투스 어댑터 검색, MAC 주소 확인. (서버만 알면 됨)
+ 2) client.py 작성
+4. 데스크탑에서 server.py 실행하고 노트북에서 client.py 실행함.
+ - 이 과정에서 블루투스 연결 확인 또는 키를 묻는 팝업 화면 안 나오는 것이 정상.
+5. 데스크탑에서 임의의 메시지 작성하고 엔터
+6. 노트북에서는 데스크탑으로 부터 받은 메시지 확인하고 임의의 메시지 작성/엔터
+7. 완료
+9. 상세 방법
+ 1) 블루투스 어댑터 찾기
+  윈도우 왼쪽하단 톱니바퀴->시스템->정보->장치관리자->Bluetooth->Realtek Bluetooth 5.3 Adapter->속성->고급->주소 기록함
+  * Realtek Bluetooth 5.3 Adapter 대신, 노트북 또는 오디세이에서는 인텔(R) 무선 Bluetooth(R)을 선택함.
+  * Bluetooth Device(RFCOMM Protocol TDI), Microsoft Bluetooth LE 열거자, Mi Speaker 등은 해당안됨. 삭제할 필요는 없음
+  
+# server.py
+
+import socket
+
+server=socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
+server.bind(("8c:88:4b:65:b9:2a", 4)) # bluetooth adapter DT-CHOI 서버 PC에서 검색한 BT 어댑터의 MAC 주소
+server.listen(1)
+
+client, addr = server.accept()
+
+try:
+    while True:
+        data = client.recv(1024)
+        if not data:
+            break
+        print(f"Message: {data.decode('utf-8')}")
+        message=input("Enter message: ")
+        client.send(message.encode("utf-8"))
+except OSError as e:
+    pass
+
+# client.py
+
+import socket
+
+client=socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
+client.connect(("8c:88:4b:65:b9:2a", 4)) # 서버의 BT MAC 주소이다. 클라이언트의 BT MAC 주소는 필요없음.
+
+try:
+    while True:
+        message = input("Enter message: ")
+        client.send(message.encode("utf-8"))
+        data=client.recv(1024)
+        if not data:
+            break
+        print(f"Message: {data.decode('utf-8')}")
+except OSError as e:
+    pass
+
+client.close()
