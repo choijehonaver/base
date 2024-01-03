@@ -71,6 +71,7 @@ client.close()
  pip3 install pybluez (또는 sudo apt-get install pybluez)
  위 2 명령을 차례대로 입력/엔터. 단, 2번째만 입력해도 되는 경우가 있었음.
 2. 서버 RPi 에서, 블루투스 주소 확인
+ hciconfig -> BD Address: E4:5F... 으로 표시됨.
  bluetoothctl
  [bluetooth]# discoverable on
  참고 bluetoothctl 종료는 quit
