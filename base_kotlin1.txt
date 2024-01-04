@@ -2,3 +2,30 @@
 1. Empty Views Activity 선택
 2. build.gradle.kt(Module.app)에서 compilSdk=34 로 변경
 3. Nexus 5 X86-64 google play 선택
+4. 뷰 바인딩 하기 
+# build.gradle.kt(app)에서 다음 부분에 추가
+android {
+    namespace = "kr.karamelsoft.kotlin1"
+    compileSdk = 34
+    // 이하 부터 바인딩 추가
+    buildFeatures{
+        viewBinding true
+    }
+    // 이상 바인딩 완료
+    defaultConfig {
+        applicationId = "kr.karamelsoft.kotlin1"
+# MainActivity.kt에서
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+// 이하 추가
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.myButton.setOnClickListener{
+            binding.myText.text="Hello"
+        }
+        setContentView(binding.root)
+// 이상추가
+        //setContentView(R.layout.activity_main)
+
+5. MainActivity에 마우스->import MainActivity...->Alt+Enter
+ 자동으로 추가됨. import kr.karamelsoft.kotlin1.databinding.ActivityMainBinding
