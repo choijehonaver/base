@@ -1,0 +1,26 @@
+2024.1.4 최재호
+Android - RPi 연결 방법에 대한 조사 및 테스트 (blueman 사용 경험 반영)
+
+1. 소켓의 결정 - 시리얼/PAN (네트워크)
+ 1) 블루투스 시리얼 소켓 
+  - PC/RPi/Android 모두 연결 성공
+  - PC/RPi 모두 파이썬 프로그래밍
+  - Android/RPi Serial Bluetooth Terminal(App)
+  - 장점 : 단순, 연결 잘 됨. blueman 설치 안해도 됨. blueman과 충돌 우려 없음.
+  - 단점 : 모든 것을 바닥에서 만들어야 함. VNC, SSH 사용 불가, putty는 COM 포트 이용하여 연결가능(미 시도)
+ 2) PAN (개인네트워크) 소켓
+  - RPi에 blueman을 설치해야 함.
+  - Android 에서는 putty app 사용. PC에서는 VNC, SSH, Putty 모두 사용 가능. 
+  - 장점 : RealVNC, Putty, SSH 활용할 수 있음.
+  - 단점 : blueman과 기존 bt의 충돌(소켓점유?)로 blueman 사용 이후에는 시리얼 불가. bt 연결/해제 등 혼돈 우려.
+ 3) 결론
+  현장에서 단순함 필요. 향후 발전 유연성과 자유도 고려.
+  blueman 등 오픈소스의 업데이트 부족과 타 프로그램 충돌 시 해결방안 없음 고려.
+  힘들고 작업량이 많지만 블루투스 시리얼 소켓 방식으로 개발하기로 함.
+
+2. 테스트한 내용
+ 1) Android - RPi bt연결 : 시리얼 소켓 방식, "Serial Bluetooth Terminal" app. 설정 과정 조금 어려움. 기록해서 순서데로 실시할 것.
+   참고 영상 https://www.youtube.com/watch?v=sY06F_sPef4
+ 2) Android - RPi bt연결 : PAN 방식, RPi에 blueman 설치 필요. 
+   참고 영상 https://www.youtube.com/watch?v=zumnEOAk9aI
+  
