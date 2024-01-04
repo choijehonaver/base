@@ -12,6 +12,7 @@
 4. 데스크탑에서 server.py 실행하고 노트북에서 client.py 실행함.
  특기사항> 이 과정에서 블루투스 연결 확인 또는 키를 묻는 팝업 화면 안 나오는 것이 정상.
  특기사항> 흰색 BT 동글은 port no. 4 해야 하고, tplink bt 동글은 port no. 5로 해야 함. (4 에서는 permission denied)
+ 특기사항>  흰색 BT 동글은 realtek adapter, tplink bt 동글은 generic radio를 선택해서 주소를 찾아야 함.
 5. 데스크탑에서 임의의 메시지 작성하고 엔터
 6. 노트북에서는 데스크탑으로 부터 받은 메시지 확인하고 임의의 메시지 작성/엔터
 7. 완료
