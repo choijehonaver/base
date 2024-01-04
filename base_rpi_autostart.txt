@@ -8,3 +8,8 @@ RPi 부팅 시 자동운전 프로그램에 대한 기록
  @lxterminal -e python3 (부팅 직후 파이썬 시작)
  여러행을 추가하면 여러개 프로그램이 동시 기동된다.
  그런데, 프로그램이 종료되면 해당 프로그램의 화면은 사라진다.(테스트 하려면 긴 프로그램으로 해야 함.)
+3. GUI로 설정할 수 있으나 복잡하고 잘 안됨.
+
+참고자료
+autostart의 다양한 설정 방법 설명 https://forums.raspberrypi.com/viewtopic.php?t=277991
+GUI 방식으로 autostart 설정 https://www.instructables.com/Autostart-a-Program-When-Raspberry-Pi-Boots-Newbie/
