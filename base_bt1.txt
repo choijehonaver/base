@@ -1,4 +1,9 @@
 목표: PC-RPi-Android 상호 BT 통신 
+rfcomm server (시리얼통신-컨트롤)
+https://www.youtube.com/watch?v=DmtJBc229Rg
+serial bt term
+https://www.youtube.com/watch?v=sY06F_sPef4&t=332s
+
 
 [PC-PC window 10]
 참조 : https://www.youtube.com/watch?v=8pMaR-WUc6U&t=533s 
