@@ -1,20 +1,7 @@
 JQuery - 인프런 무료 강좌(w3school기준)
 Keras 창시자에게 배우는 딥러닝 117p
 HTML+CSS+JavaScript 웹표준의 정석 148p
-Nod.js 프로그래밍 90p
+Node.js 프로그래밍 90p
 파이썬 스킬업 - 교보 e
 판다스입문 54p
-OpenCV 50p
-리액트 노마드코더 무료강좌
-
-
-1. GIMP 성남 e-book 111p
-4. 자바웹프로그램 - 162p(성남)
-7. 다빈치리졸브 짹PD 유투브 6회
-8. Make:Electronics 222p
-10. 실무에 바로 써먹는 경리회계 업무지식 - 48p
-18. Inkscape-YOUTUBE
-9. Blender YOUTUBE
-
-ZWCAD
-3WN8 WFT9 AMMR 63ZP BHYU M52R
+OpenCV 50
