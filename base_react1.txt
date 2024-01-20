@@ -1,0 +1,33 @@
+npx create-react-app이 작동하지 않습니다.
+아래와 같이 create-react-app을 제거했다가 다시 설치한 이후에, 해당 명령어를 실행해보시기 바랍니다.
+# create-react-app 제거 후 재설치  
+$ npm uninstall -g create-react-app  
+$ npm install -g create-react-app  
+  
+# create-react-app 재실행  
+$ npx create-react-app my-app
+
+React 시작/중지 개념
+1. 새로운 폴더 만듬. 해당 폴더로 이동
+2. npx create-react-app . 엔터 (여기서 . 는 현재 디렉토리의 뜻)
+3. npm start 엔터 (live server 처럼 에디터 변동 사항을 브라우저에서 실시간 반영)
+4. 코딩
+5. 터미널에서 ctrl+c -> Y 하면 npm server 가 중단됨.
+6. 새로운 react 프로젝트 하려면 새로 폴더 작성. 그게 아니면 해당 폴더로 이동해서 npm start
+
+Electron 
+
+-새 프로젝트 만들기 방법 1 -
+1. 새로운 폴더 만듬. 해당 폴더로 이동
+2. npm init -> 질문에 엔터 여러번, 코멘트 추가도 가능
+3. npm install --save-dev electron 엘렉트론 패키지 설치
+ 각종 json 파일들을 수정해야 함.
+4. npm start - 중지할 때는 ctrl+c
+
+-새 프로젝트 만들기 방법 2 -
+1. 새로운 폴더 만듬. 해당 폴더로 이동
+2. npx create-electron-app . (현재 디렉토리에 일렉트론 앱 만들겠다.)
+3. npm install
+4. npm start - 중지할 때는 ctrl+c
+
+프로그램 배포 (설치 exe) 만드는 법 : https://jetalog.net/106
