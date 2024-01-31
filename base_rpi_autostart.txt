@@ -1,5 +1,21 @@
 2024.1.4 최재호
 RPi 부팅 시 자동운전 프로그램에 대한 기록
+부팅시 자동실행을 설정하는 방법은 모두 6가지 있다.
+
+1 번 방법: /etc/xdg/lxsession/LXDE-pi/autostart 파일 수정
+2 번 방법: /etc/rc.local 파일 수정
+3 번 방법: /home/pi/.bashrc 파일 수정 (.bashrc는 hidden 파일. ls -a 해야 보임)
+4 번 방법: /etc/init.d 파일 수정
+5 번 방법: /lib/systemd/system/sampl.service 파일을 새로 만들고, systemctl daemon-reload, systemctl enable sample.service 입력하는 법 
+6 번 방법: crontab 프로그램 이용. 
+
+각각의 특징
+1번: 실행내용을 볼 수 있음. 현재 핀캠에 사용중.
+2번: headless mode에 최적. 실행 내용을 볼 수 없다.
+3번: headless mode?. 실행내용 볼 수 없다. 터미날을 새로 열 때마다 새 프로그램 계속 시작
+4번: 잘 모르겠음. 부팅 순서 등 뭔가 detail 설정이 가능하다고 함.
+5번: 잘 모르겠음. service start-stop의 개념이므로 2개 이상 프로그램 기동에 유리할 것으로 추측
+6번: 부팅시 자동기동도 가능하지만 타이머 기능도 있음. syslog에 이상여부 기록하는 기능도 있음.
 
 1. 부팅 시 자동운전되는 프로그램을 1개 이상 설정할 수 있다.
 2. 먼저 rpi에서 파일을 수정한다.
@@ -13,3 +29,4 @@ RPi 부팅 시 자동운전 프로그램에 대한 기록
 참고자료
 autostart의 다양한 설정 방법 설명 https://forums.raspberrypi.com/viewtopic.php?t=277991
 GUI 방식으로 autostart 설정 https://www.instructables.com/Autostart-a-Program-When-Raspberry-Pi-Boots-Newbie/
+5가지 방법 개략적 설명 https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/
