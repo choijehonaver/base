@@ -1,0 +1,30 @@
+[socket통신]
+
+OS 환경 : Windows, Linux 동일os간
+언어: C
+에디터: vs code+gcc(저사양window), visual studio(고사양 window),  Thonny+gcc(linux)
+
+[환경설정: Windows 10 VS Code + gcc]
+1) vs code 설치
+2) gcc 설치 참고: https://blog.naver.com/syunjae21/222545501011
+3) 샘플프로그램작성, New Terminal 열고 명령행에서 실행
+4) gcc test1.c -o test1.exe
+5) ./test1.exe
+6) 소켓통신 샘플프로그램 복사
+7) 코드 최상단에 다음 줄 추가하고, 저장(반드시 확인)
+#pragma comment(lib, "ws2_32.lib") //  매우 중요. 첫번째 올 것.
+#include <winsock2.h> // 두번째 올 것.
+8) gcc server.c -o server.exe -lws2_32 (철자 주의, 라이브러리를 연결시켜주는 옵션?)
+
+[환경설정: Windows 10 Visual Studio]
+1) Visual Studio 설치
+2) ws2_32.lib 연결작업 (여기서 에러 많이 남.)
+ 설명-ws2_32.lib 파일은 window system 폴더에 이미 설치되어 있고, 환경 변수 path에도
+        이미 기록되어 있다. 나는 ws2_32.lib를 ws2-32.lib로 코드선두에 기록해서 에러가 난 것이었다.
+3) debug를 하면 argv까지 있어야 하는데, 그럴 방법이 없어서 다른 윈도우pc에서 실행파일로 만들어
+   복사해 와서 명령창에서 실행파일+argument를 입력했다.
+
+[환경설정: Thonny+gcc]
+1) 라즈베리파이4, Thonny, gcc는 기본 설치되어 있다.
+2) Thonny에서 client.c를 저장하고 lxterminal에서 gcc 명령 실행한다.
+* 리눅스가 설치환경 설정이 가장 간단함.
