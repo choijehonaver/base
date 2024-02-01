@@ -1,3 +1,30 @@
+
+[준비]
+Window 10
+Node.js
+
+[리액트용 폴더 만들기]
+d:>cd mywork
+d:\mywork>mkdir react-app -> 각 프로젝트는 이 폴더의 하위 폴더로 생성된다.
+d:\mywork\react-app>npx create-react-app blog
+d:\mywork\react-app>cd blog
+
+[vs code]
+vs code에서 blog 폴더를 open
+vs code->Terminal->New Terminal
+PS d:\mywork\react-app\blog>npm start
+-> 웹 브라우저 자동으로 열림. 톱니바퀴 회전됨. 회전 안되면
+-> 윈도우 설정>접근성>Window에서 애니메이션표시>켬
+
+[수정해 보기]
+App.js ->return(안의 내용을 수정한다.)
+예) 
+return (
+ <div className="App">
+   Hello World
+ </div>
+);
+
 npx create-react-app이 작동하지 않습니다.
 아래와 같이 create-react-app을 제거했다가 다시 설치한 이후에, 해당 명령어를 실행해보시기 바랍니다.
 # create-react-app 제거 후 재설치  
