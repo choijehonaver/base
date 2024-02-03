@@ -19,6 +19,7 @@ OS 환경 : Windows, Linux 동일os간
 [환경설정: Windows 10 Visual Studio]
 1) Visual Studio 설치
 2) ws2_32.lib 연결작업 (여기서 에러 많이 남.)
+  철자에 주의하세요. 'ws2-32.lib 인지 ws2_32.lib 인지 '
  설명-ws2_32.lib 파일은 window system 폴더에 이미 설치되어 있고, 환경 변수 path에도
         이미 기록되어 있다. 나는 ws2_32.lib를 ws2-32.lib로 코드선두에 기록해서 에러가 난 것이었다.
 3) debug를 하면 argv까지 있어야 하는데, 그럴 방법이 없어서 다른 윈도우pc에서 실행파일로 만들어
