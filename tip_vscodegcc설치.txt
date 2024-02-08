@@ -1,0 +1,2 @@
+윈도우 10 VS Code 에서 C 컴파일 방법 -> gcc 설치
+참고 : https://blog.naver.com/syunjae21/222545501011
