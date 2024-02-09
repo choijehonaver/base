@@ -1,2 +1,5 @@
 윈도우 10 VS Code 에서 C 컴파일 방법 -> gcc 설치
-참고 : https://blog.naver.com/syunjae21/222545501011
+참고1 한글 : https://blog.naver.com/syunjae21/222545501011
+참고2 영어 : https://code.visualstudio.com/docs/languages/cpp#_intellisense
+include error 발생시
+환경변수 사용자 변수 path 추가
