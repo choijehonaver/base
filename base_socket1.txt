@@ -11,10 +11,10 @@ OS 환경 : Windows, Linux 동일os간
 4) gcc test1.c -o test1.exe
 5) ./test1.exe
 6) 소켓통신 샘플프로그램 복사
-7) 코드 최상단에 다음 줄 추가하고, 저장(반드시 확인)
+중요_7) 코드 최상단에 다음 줄 추가하고, 저장(반드시 확인)
 #pragma comment(lib, "ws2_32.lib") //  매우 중요. 첫번째 올 것.
 #include <winsock2.h> // 두번째 올 것.
-8) gcc server.c -o server.exe -lws2_32 (철자 주의, 라이브러리를 연결시켜주는 옵션?)
+중요_8) gcc server.c -o server.exe -lws2_32 (철자 주의, 라이브러리를 연결시켜주는 옵션?)
   참고:https://domdom.tistory.com/64
 
 [환경설정: Windows 10 Visual Studio]
