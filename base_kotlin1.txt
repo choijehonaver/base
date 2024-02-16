@@ -1,3 +1,4 @@
+코틀린문법 기초 https://www.youtube.com/watch?v=8RIsukgeUVw&list=PLQdnHjXZyYadiw5aV3p6DwUdXV2bZuhlN&index=1
 # kotlin 개발 학습 중 시행착오 2024.1.4 최재호
 1. Empty Views Activity 선택
 2. build.gradle.kt(Module.app)에서 compilSdk=34 로 변경
