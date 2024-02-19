@@ -1,11 +1,17 @@
-최종 결론
+최종 결론1.
 파이썬 으로 mobile, deskop app, linux app 만들 수 있음.
 하드웨어 제어(BT, opencv, tensorflow..) 등 기존 부분은 파이썬으로 두고,
 ui(모바일/데스크/리눅스) 부분은 flutter 기능을 사용할 수 있음.
 flutter를 배우고 나서, flet으로 flutter 의 클래스를 가지고 옴.
 결과물은 google의 느낌이 남.
 추가: ui는 flutter flow를 이용하면 기본적인 위젯은 drap-drop으로 디자인 가능->후에 코드를 수정할 수 있음.
-따라서. 1. flutter를 배운다. 2. flet을 배운다. 3. flutter flow를 배운다.
+따라서. 1. flutter를 배운다. 2. flet을 배운다. 3. flutter flow를 배운다 4. flet/flutter로 android 권한허용방법 배운다.
+
+최종 결론2.
+IDE는 VS Code, Android Studio 둘 중 아무거나 사용해도 된다. 에뮬레이터는 android studio로 열린다.
+androi의 권한 허용은 flutter methodchannel을 통해서 한다.
+flet, flutter에서는 chart 기능도 있고, 배경이미지 위에 그림그릴 수 있다.
+보여주기 식이면 fluter로만 코딩하고, 계산/opencv등 기능이 필요하면 flet으로 한다.
 
 1. 종합: 윈도우pc, 라즈베리파이 app 작성. 파일 전송 등 참고 사이트
  flutter-pi 실행하고, 빌드된 파일을 실행하는 환경임.
