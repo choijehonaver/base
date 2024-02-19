@@ -1,2 +1,10 @@
-윈도우pc, 라즈베리파이 app 작성. 파일 전송 등 참고 사이트
+1. 종합: 윈도우pc, 라즈베리파이 app 작성. 파일 전송 등 참고 사이트
+ flutter-pi 실행하고, 빌드된 파일을 실행하는 환경임.
+ flutter-pi는 .sh 로 실행.
 https://www.youtube.com/watch?v=Y6sInr2TwOQ
+
+2. 윈도우에서 flutter app 배포, visual studio 사용
+https://www.youtube.com/watch?v=YhF3k68qpOU&t=11s
+
+현장에서 컴파일 속도 단축 가능-win pc에서 컴파일함.
+파일 바이너리화 가능
