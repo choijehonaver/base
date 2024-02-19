@@ -1,0 +1,2 @@
+윈도우pc, 라즈베리파이 app 작성. 파일 전송 등 참고 사이트
+https://www.youtube.com/watch?v=Y6sInr2TwOQ
