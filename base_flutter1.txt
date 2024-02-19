@@ -1,3 +1,12 @@
+최종 결론
+파이썬 으로 mobile, deskop app, linux app 만들 수 있음.
+하드웨어 제어(BT, opencv, tensorflow..) 등 기존 부분은 파이썬으로 두고,
+ui(모바일/데스크/리눅스) 부분은 flutter 기능을 사용할 수 있음.
+flutter를 배우고 나서, flet으로 flutter 의 클래스를 가지고 옴.
+결과물은 google의 느낌이 남.
+추가: ui는 flutter flow를 이용하면 기본적인 위젯은 drap-drop으로 디자인 가능->후에 코드를 수정할 수 있음.
+따라서. 1. flutter를 배운다. 2. flet을 배운다. 3. flutter flow를 배운다.
+
 1. 종합: 윈도우pc, 라즈베리파이 app 작성. 파일 전송 등 참고 사이트
  flutter-pi 실행하고, 빌드된 파일을 실행하는 환경임.
  flutter-pi는 .sh 로 실행.
@@ -8,3 +17,21 @@ https://www.youtube.com/watch?v=YhF3k68qpOU&t=11s
 
 현장에서 컴파일 속도 단축 가능-win pc에서 컴파일함.
 파일 바이너리화 가능
+
+3. flet 을 이용하여 파이썬 프로그래밍 만으로 flutter 수준의 ui 만듬
+https://www.youtube.com/watch?v=-mZP91Y3naY&list=PL4KX3oEgJcfdiE-S3qLqATrsMg2Nddosx
+
+4. opencv, tensorflow 
+1) flutter에서 android용 opencv, tensorflow sdk 이용 -> 안드로이드스튜디오 필요, 복잡, 데스크탑이나 rpi 자료 없음.
+2) opencv, tensorflow의 파이썬 코드를 flutter에서 읽어 들임 -> 방법 못 찾음. 모두 flet을 써서 파이썬으로 flutter처럼 만들라고 함.
+3) 파이썬 플라스크 구동해서 flutter가 플라스크에 데이터를 요청하는 api 방식 -> 관련 자료 적음. 인기 없음.
+4) flet이란 툴을 써서 파이썬 만 가지고 flutter 기능을 촬용하는 방법 -> 관련 자료 많고 인기 많음.
+결론-> 아직까지 flutter를 이용해서 desktop/rpi 용으로 앱을 만드는 것은 무리. 안드로이드/ios에는 가능할 것으로 보임.
+
+5. 결론
+ 1) 라즈베리파이 - tkinter 대신 import flet으로 파이썬 코딩. IDE는 윈도우/vscode ssh 접속, rpi에 vnc하여 run. 결과 확인
+    -> Tkinter보다 조금 더 좋은 UI 수준으로 이해. 단, 화면 구성이 좀 더 간편. 단순. 유지보수 간편.
+ 2) 노트북/데스크탑 - flet으로 작성. 파이썬 코딩.
+ 3) 모바일 - flutter로 작성. opencv/tensorflow는 android/ios sdk 활용함.
+ 4) 웹 - flutter로 작성
+ 5) 학습량 -> flutter에 익숙해 지기->flet사용 가능.
